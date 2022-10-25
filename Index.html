@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Innovation Showroom</title>
+    <meta name="description" content="" />
+
+    <!--CSS stylesheets. bootstrap, fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--standard JS scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font: Univers Next for HSBC Regular;
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            line-height: 1.8em;
+            color: #666;
+        }
+
+        h2 {
+
+            font-size: 36px;
+            font-weight: 400;
+            color: rgb(217, 0, 19);
+            text-align: left;
+            padding: 0px;
+        }
+
+        h2::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(219, 0, 17);
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        h2:hover::after {
+            width: 100%
+        }
+
+
+
+        .header {
+            min-height: 100vh;
+            height: 100%;
+            background-image: url(HeaderPic.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+
+        .nav-links {
+            flex: 1;
+            text-align: center;
+        }
+
+        a {
+            border: 2px rgba(255, 255, 255, 0.322);
+            background: rgba(255, 255, 255, 0.322);
+
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 15px 30px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(219, 0, 17);
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%
+        }
+
+        .header-text {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 140%);
+            text-align: center;
+        }
+
+        .header-text h1 {
+            font-size: 65px;
+        }
+
+        .header-text p {
+            margin: 10px 0 40px;
+            font-size: 30px;
+
+        }
+
+        .pimg2,
+        .pimg3,
+        .pimg4 {
+            position: relative;
+            opacity: 0.70;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
+        }
+
+        .pimg2 {
+            background-image: url("samplepic.png");
+            min-height: 400px;
+        }
+
+        .pimg3 {
+            background-image: url("Background\ img.png");
+            min-height: 400px;
+        }
+
+        .pimg4 {
+            background-image: url("samplepic.png");
+            min-height: 400px;
+        }
+
+
+
+        .about,
+        .gallery {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 70px;
+            padding-bottom: 70px;
+
+            background-color: #ffffff;
+        }
+
+        .about,
+        .purpose,
+        .booking,
+        .gallery p {
+            color: #666;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 0px;
+            text-align: left;
+        }
+
+        .about img {
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            padding-bottom: 50px;
+            transition: top ease 0.5s;
+        }
+
+        .about img:hover {
+            top: -10px;
+        }
+
+        .purpose {
+
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-color: white;
+        }
+
+        .purpose p {
+            color: #666;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 0px;
+            text-align: left;
+        }
+
+        .picto {
+            position: relative;
+            top: 0;
+            transition: top ease 0.5s;
+        }
+
+        .picto:hover {
+            top: -10px;
+        }
+
+
+        .row {
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .row h4::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(219, 0, 17);
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .row h4:hover::after {
+            width: 80%
+        }
+
+
+        .booking {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 70px;
+
+            background-color: #ffffff;
+        }
+
+        .booking p {
+            color: #666;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 0px;
+            text-align: left;
+        }
+
+
+        .ptext {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+            font-size: 27px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .ptext1 {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--Nav and first page-->
+    <section class="header">
+        <nav>
+            <!-- <a href="Index.html"><img src="" alt=""></a> -->
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#purpose">OUR PURPOSE</a></li>
+                    <li><a href="#bookings">BOOKINGS</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header-text">
+            <h1> The Innovation Showroom</h1>
+            <p> A space to experience the latest in innovation at HSBC
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- About Us -->
+    <section class="about">
+        <br>
+
+        <h2 id="about">About Us</h2>
+        <p>
+            Located in our CEO’s old office on Level 42, 8 Canada Square, with fantastic views over London and an array
+            of exciting technology to leverage, the Innovation Showroom provides the perfect stage to energise
+            colleagues and bring innovative ideas to life.
+        </p>
+
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="samplepic.png" class="img-fluid">
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="Background img.png" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pimg2">
+        <div class="ptext">
+            <span>
+                Image Two Text
+            </span>
+        </div>
+    </div>
+
+    <!-- Our Purpose-->
+
+    <section class="purpose">
+        <h2 id="purpose">Our Unique Purpose</h2>
+        <p>
+            Innovation is a key component of our purpose, values and strategy. With all this innovation we needed a
+            place where development of new tools, ideas and initiatives can be showcased, demonstrated & celebrated.
+        </p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="picto" src="convo-picto.png">
+                    <h4>Collaboration</h4>
+                    <p>What is collaboration</p>
+                </div>
+                <div class="col-md-4">
+                    <img class="picto" src="innovation-picto.png">
+                    <h4>Innovation</h4>
+                    <p>What is innovation</p>
+                </div>
+                <div class="col-md-4">
+                    <img class="picto" src="rocket-picto.png">
+                    <h4>Development</h4>
+                    <p>What is development</p>
+                </div>
+            </div>
+
+
+    </section>
+
+    <div class="pimg3">
+        <div class="ptext">
+            <span>
+                Image Three Text
+            </span>
+        </div>
+    </div>
+
+    <section class="booking">
+        <h2 id="bookings">Booking</h2>
+        <p>All requests must be directed to
+            Innovation Showroom London
+            or Join us on Microsoft Teams </p>
+        <div class="container">
+            <div class="row"">
+                <div class=" col-sm-6">
+
+                <a
+                    href="https://teams.microsoft.com/l/team/19%3anAMG_JfL3ZgJrjgMuTE0ABim8ivLjZwGLRxTAG-OBEc1%40thread.tacv2/conversations?groupId=aba6c0ff-97a6-4e9c-b929-6cc3b39a4848&tenantId=e0fd434d-ba64-497b-90d2-859c472e1a92">
+                    <img class="picto" src="teams-logo.png"></a>
+
+
+            </div>
+            <div class="col-sm-6">
+                <p> Please include:
+
+                <ul>
+                    <li>Purpose of use</li>
+                    <li>Name of Organiser</li>
+                    <li>Date & Time</li>
+                    <li>Attendee Numbers</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        </div>
+
+
+    </section>
+
+    <div class="pimg4">
+        <div class="ptext">
+            <span>
+                Image Four Text
+            </span>
+        </div>
+    </div>
+
+    <section class="gallery">
+        <h2 id="gallery">Gallery</h2>
+        <p>
+            Take a look at some of our images to get a feel for the space!
+
+        </p>
+    </section>
+
+
+
+
+</body>
+
+</html>
